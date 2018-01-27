@@ -1,0 +1,8 @@
+Soundex class is used to compute a 4 character soundex code to represent a word. The first letter of the word is used as the beginning and the latter numbers get computed based on the character and whether the character is repeated. Finally, the full soundex code is cut into 4 characters.
+
+The main class reads the words from the dictionary.txt file and adds each word inside an array. The input file is set (input.txt) where there are correctly written and misspelled words. The program then stores each word from the file in a String variable and the numbers and punctuation are removed from the string so it can easily be compared to words in the dictionary. The word is run through the dictionary to see whether the word is within the dictionary -- and if not, check for the same soundex code that words from the dictionary have, and append it into the output file (output.txt). If the word is already in the dictionary, it means it was correctly spelled (because it was found in the dictionary) and it is simply added into the output file. Once a mis-spelling is found, a user is given an option to either enter the correct word or be able to enter a code for one of the suggestions given based on the same soundex code. If the word is not already in the dictionary, it is added into the dictionary file to improve the search in the future. The dictionary is then sorted alphabetically to make sure any new additions are in the correct place.
+
+To run:
+Compile soundex.java and Spellchecker.java, then run Spellchecker
+
+You can add your own input in the input.txt file. Output will be provided on a new line in the output.txt file.
