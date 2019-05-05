@@ -130,15 +130,23 @@ public class Spellchecker {
                 String userSelection = "";
 
                 if (option.hasNextInt()) {
+                	
                     userSelection = option.next();
 
+                    try {
                     while (Integer.parseInt(userSelection) > suggestionWord.size() - 1 || Integer.parseInt(userSelection) < 0) { // 12)
-                        System.out.println("Incorrect input. Please try again.");
+                        System.out.println("Incorrect input. Please enter your selection again.");
                         userSelection = option.next();
                     }
+                    
                     int y = Integer.parseInt(userSelection);
                     outputFile.write(suggestionWord.get(y) + " ");
-                } else { // 13)
+                    } catch (NumberFormatException e) {
+                    System.out.println("Number Format Exception; selecting first suggestion");
+                	outputFile.write(suggestionWord.get(0) + " ");
+                }
+            }
+                 else { // 13)
                     userSelection = option.next();
                     userSelection = userSelection.replaceAll("\\W", "");
                     userSelection = userSelection.replaceAll("\\d", "");
