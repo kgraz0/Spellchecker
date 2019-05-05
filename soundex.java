@@ -66,3 +66,4 @@ class soundex {
         soundex = (gCode + "0000").substring(0, 4); 
         return soundex;
 }
+}
